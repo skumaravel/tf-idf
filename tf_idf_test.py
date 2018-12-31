@@ -5,7 +5,7 @@ Created on Fri Dec 28 13:09:53 2018
 @author: sujeeth.kumaravel
 """
 
-import string
+from tf_idf import tf_idf
 
 corpus = []
 doc1 = 'do not mess with me'
