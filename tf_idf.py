@@ -25,7 +25,7 @@ def tf_idf(corpus, document, term):
     for t in doc_term_list:
         if t == term:
             term_count_in_document += 1
-       
+    
     tf = term_count_in_document/doc_term_count
     
     doc_count = len(corpus)
@@ -38,8 +38,11 @@ def tf_idf(corpus, document, term):
         
         if term in d_words:
             num_docs_with_term += 1
-            
-    temp_idf = doc_count/num_docs_with_term
-    idf = math.log(temp_idf)
     
+    if num_docs_with_term != 0:        
+        temp_idf = doc_count/num_docs_with_term
+        idf = math.log(temp_idf)
+    else:
+        idf = 0
+        
     return tf*idf
